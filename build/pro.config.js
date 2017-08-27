@@ -7,9 +7,9 @@ module.exports = {
     app: path.resolve(__dirname, '../client/client.jsx'),
   },
   output: {
-    publicPath: '/scripts/',
+    publicPath: '/',
     path: path.resolve(__dirname, '../assets/scripts'),
-    filename: '[name].js',
+    filename: 'scripts/[name].js',
     chunkFilename: '[name]_[chunkhash:5].js'
   },
   module: {
@@ -26,14 +26,14 @@ module.exports = {
       },
       {
         test: /\.(less|css)$/,
-        loader: ExtractTextPlugin.extract({
-          use: ['style-loader', 'css-loader', 'less-loader'],
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'less-loader'],
+          fallback: 'style-loader',
         }),
-        include: path.resolve(__dirname, 'node_modules'),
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader?name=../images/[hash:8].[name].[ext]'
+        loader: 'file-loader?name=images/[name].[hash:8].[ext]'
       }
     ]
   },
@@ -42,7 +42,7 @@ module.exports = {
   },
   devtool: 'hidden-source-map',
   plugins: [
-    new ExtractTextPlugin({ filename: '../styles/[name].css', disable: false, allChunks: true }),
+    new ExtractTextPlugin({ filename: 'styles/[name].css', disable: false, allChunks: true }),
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: require('./reactFest.json')
