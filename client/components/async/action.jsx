@@ -24,7 +24,7 @@ export const failure = (n, error) => ({
 
 export const post = n => (dispatch) => {
     dispatch(request(n));
-    return fetch(`http://0.0.0.0:9527/api/weather/${n}`)
+    return fetch(`http://0.0.0.0:9522/api/weather/${n}`)
         .then(response => {
             if (response.status > 200) {
                 dispatch(failure(n, response.status));

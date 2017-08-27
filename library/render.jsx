@@ -19,11 +19,13 @@ const temp = (content, initialState) => (
 <meta content="yes" name="apple-touch-fullscreen">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<!--
 <script src="/library/reset.js"></script>
+-->
 <link rel="stylesheet" href="/styles/app.css">
 </head>
 <body>
-<div id="app">${content}</div>
+<div id="app" style="height: 100%">${content}</div>
 <script>window.__INITIAL_STATE__ = ${serialize(initialState)}</script>
 <script src="/library/react.js"></script>
 <script src="/scripts/app.js"></script>

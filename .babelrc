@@ -7,7 +7,14 @@
   ],
   "plugins": [
     "add-module-exports",
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true,
+      }
+    ]
   ],
   "env": {
     "development": {
@@ -20,3 +27,4 @@
     }
   }
 }
+

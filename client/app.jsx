@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 
 import Async from './components/async';
+import Login from './components/login';
+import Main from './components/main';
 
 const App = () => (
-  <div>
-    <Route path="/" exact component={Async} />
-    <Route path="/async" component={Async} />
-  </div>
+  <Switch>
+    <Route exact path="/" >
+      <Redirect to="/main" push />
+    </Route>
+    <Route path="/main" component={Main} />
+    <Route path="/login" component={Login} />
+  </Switch>
 );
 
 export default App;

@@ -1,3 +1,9 @@
 @import "./_reset.scss";
 @import "./_base.scss";
 
+
+#app,
+.ant-layout {
+  min-height: 100%;
+}
+
