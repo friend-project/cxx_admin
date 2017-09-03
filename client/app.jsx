@@ -5,7 +5,6 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import Async from './components/async';
 import Login from './components/login';
 import Main from './components/main';
 

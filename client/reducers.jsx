@@ -1,13 +1,19 @@
 import { combineReducers } from 'redux';
 
-import count from './components/count/reducer';
-import async from './components/async/reducer';
 import login from './components/login/reducer';
+import { muralList, muralDelete } from './components/mural/reducer';
+import muralAdd from './components/muralAdd/reducer';
+import exhibitionAdd from './components/exhibitionAdd/reducer';
+import { exhibitionList, exhibitionDelete } from './components/exhibition/reducer';
 
 const rootReducer = combineReducers({
   login,
-  count,
-  async,
+  muralAdd,
+  muralList,
+  muralDelete,
+  exhibitionAdd,
+  exhibitionList,
+  exhibitionDelete,
 });
 
 export default rootReducer;

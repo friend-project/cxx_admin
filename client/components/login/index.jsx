@@ -5,6 +5,8 @@ import md5 from 'md5';
 
 import cfg from  './../../../config/app';
 import { loginCheck } from './action';
+import s from './login';
+
 
 const FormItem = Form.Item;
 
@@ -37,7 +39,7 @@ class Login extends Component {
       this.props.history.push('/main');
     }
     return (
-      <div>
+      <div className={s.box}>
         <div>
           <img src={cfg.logo} alt={cfg.name} />
         </div>

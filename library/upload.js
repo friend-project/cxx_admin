@@ -65,6 +65,7 @@ function uploadFile(ctx, options) {
         result.success = true
         result.message = '文件上传成功'
         result.path = _uploadFilePath;
+        result.fileName = fileName;
       })
     })
 

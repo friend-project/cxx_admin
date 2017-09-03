@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Layout } from 'antd';
 const { Header } = Layout;
 
-import s from './style';
+import s from './head';
 
 class Head extends Component {
   constructor(props) {

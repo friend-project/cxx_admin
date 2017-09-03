@@ -7,7 +7,12 @@ const { Sider, Content } = Layout;
 
 import Head from '../head';
 import Side from '../side';
-import Async from '../async';
+import Mural from '../mural';
+import MuralAdd from '../muralAdd';
+import Exhibition from '../exhibition';
+import ExhibitionAdd from '../exhibitionAdd';
+import About from '../about';
+import Copy from '../copy';
 
 import s from './main';
 
@@ -28,8 +33,13 @@ class Main extends Component {
             <Side {...this.props} />
           </Sider>
           <Content className={s.content}>
-            <Route exact path={`${match.url}`} component={Async} />
-            <Route path={`${match.url}/async`} component={Async} />
+            <Route exact path={`${match.url}`} component={Mural} />
+            <Route exact path={`${match.url}/mural`} component={Mural} />
+            <Route exact path={`${match.url}/mural/add`} component={MuralAdd} />
+            <Route exact path={`${match.url}/exhibition`} component={Exhibition} />
+            <Route exact path={`${match.url}/exhibition/add`} component={ExhibitionAdd} />
+            <Route exact path={`${match.url}/about`} component={About} />
+            <Route exact path={`${match.url}/copy`} component={Copy} />
           </Content>
         </Layout>
       </Layout>
