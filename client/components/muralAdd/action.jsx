@@ -24,7 +24,7 @@ export const muralAddFailure = (n, error) => ({
 });
 
 export const addMural = n => (dispatch) => {
-  dispatch(muralAddRequest(n.username));
+  dispatch(muralAddRequest(n));
   return fetch(
     `${cfg.web}/api/muralAdd`,
     {
@@ -45,6 +45,6 @@ export const addMural = n => (dispatch) => {
       }
       return response.json();
     })
-    .then(stories => dispatch(muralAddReceive(n.username, stories)));
+    .then(stories => dispatch(muralAddReceive(n, stories)));
 };
 

@@ -11,8 +11,8 @@ export default (data) => {
     },
     {
       title: '缩略图',
-      dataIndex: 'small_img',
-      render: small_img => <img src={`${cfg.img}${small_img}`} />,
+      dataIndex: 'thumb_img',
+      render: thumb_img => <img src={`${cfg.img}${thumb_img}`} />,
     },
     {
       title: '创建时间',
@@ -32,5 +32,4 @@ export default (data) => {
     />
   );
 }
-// id: 1, name: "1111", small_img: "40855ac3406d1.jpg", big_img: "025cc4e39d792.jpg", create_time: "2017-09-03T08:25:24.000Z"
 

@@ -19,6 +19,7 @@ app.context.logger = logger;
 app.use(cors());
 app.use(bodyParser({ extended: true }));
 app.use(serve(path.resolve(__dirname, './../assets/')));
+app.use(serve(path.resolve(__dirname, './../uploads/')));
 
 
 if (process.env.NODE_ENV === 'development') {

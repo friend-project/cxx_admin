@@ -11,7 +11,7 @@ File.map = async (ctx, next) => {
   try {
     // 上传 map 文件
     let result = { success: false };
-    let serverFilePath = path.join(__dirname, '../../assets/uploads');
+    let serverFilePath = path.join(__dirname, '../../uploads');
     result = await uploadFile(ctx, {
       fileType: 'map',
       path: serverFilePath,

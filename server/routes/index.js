@@ -25,7 +25,7 @@ router.post('/file', File.map);
  * @brief 壁画列表
  * @return result
  */
-router.post('/muralList', Mural.list);
+router.get('/muralList', Mural.list);
 
 /*
  * @brief 上传壁画
@@ -43,7 +43,7 @@ router.post('/muralDelete', Mural.dlt);
  * @brief 展览列表
  * @return result
  */
-router.post('/exhibitionList', Exhibition.list);
+router.get('/exhibitionList', Exhibition.list);
 
 /*
  * @brief 上传壁画
@@ -52,7 +52,7 @@ router.post('/exhibitionList', Exhibition.list);
 router.post('/exhibitionAdd', Exhibition.add);
 
 /*
- * @brief 添加壁画
+ * @brief 删除壁画
  * @return result
  */
 router.post('/exhibitionDelete', Exhibition.dlt);

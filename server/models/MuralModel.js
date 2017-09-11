@@ -45,7 +45,7 @@ MuralModel.add = async (ctx, next, opt) => {
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          `insert into mural (name, small_img, big_img) values ('${opt.name}', '${opt.small_img}', '${opt.big_img}')`,
+          `insert into mural (name, thumb_img, img) values ('${opt.name}', '${opt.thumb_img}', '${opt.img}')`,
           function (e, results, fields) {
             if (e) {
               ctx.logger.error(e);

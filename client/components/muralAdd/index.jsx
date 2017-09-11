@@ -42,6 +42,7 @@ class Mural extends Component {
       },
       onChange(info) {
         if (info.file.status === 'done') {
+          console.log(info.file.response.fileName);
           that.setState({
             sImg: info.file.response.fileName,
           });
@@ -80,13 +81,13 @@ class Mural extends Component {
           <Upload className={s.upload} {...sProps} >
             <Button>上传缩略图片</Button>
           </Upload>
-          <img className={s.img} src={`${cfg.static}/uploads/map/${sImg}`} />
+          <img className={s.img} src={`${cfg.static}/map/${sImg}`} />
         </div>
         <div className={s.row}>
           <Upload className={s.upload} {...bProps} >
             <Button>上传原始图片</Button>
           </Upload>
-          <img className={s.img} src={`${cfg.static}/uploads/map/${bImg}`} />
+          <img className={s.img} src={`${cfg.static}/map/${bImg}`} />
         </div>
         <div className={s.row}>
           <Button onClick={() => this._add()}>添加壁画</Button>

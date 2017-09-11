@@ -44,20 +44,7 @@ export const muralDeleteFailure = (n, error) => ({
 
 export const muralList = n => (dispatch) => {
   dispatch(muralListRequest(n));
-  return fetch(
-    `${cfg.web}/api/muralList`,
-    {
-      method: 'POST',
-      mode: 'cors',
-      headers: new Headers({
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      }),
-      cache: 'default',
-      body: JSON.stringify(n),
-      credentials: 'include',
-    },
-  )
+  return fetch(`${cfg.web}/api/muralList`)
     .then((response) => {
       if (response.status > 200) {
         dispatch(muralListFailure(n, response.status));
