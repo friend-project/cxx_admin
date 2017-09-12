@@ -44,7 +44,20 @@ export const exhibitionDeleteFailure = (n, error) => ({
 
 export const exhibitionList = n => (dispatch) => {
   dispatch(exhibitionListRequest(n));
-  return fetch(`${cfg.web}/api/exhibitionList`)
+  return fetch(
+    `${cfg.web}/api/exhibitionList`,
+    {
+      method: 'GET',
+      mode: 'cors',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      }),
+      cache: 'default',
+      body: JSON.stringify(n),
+      credentials: 'include',
+    },
+  )
     .then((response) => {
       if (response.status > 200) {
         dispatch(exhibitionListFailure(n, response.status));

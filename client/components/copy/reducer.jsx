@@ -1,7 +1,7 @@
 import {
-  LOGIN_REQUEST,
-  LOGIN_RECEIVE,
-  LOGIN_FAILURE,
+  EXHIBITION_ADD_REQUEST,
+  EXHIBITION_ADD_RECEIVE,
+  EXHIBITION_ADD_FAILURE,
 } from './constant';
 
 export default (state = {
@@ -10,19 +10,19 @@ export default (state = {
   error: null,
 }, action) => {
   switch (action.type) {
-    case LOGIN_REQUEST:
+    case EXHIBITION_ADD_REQUEST:
       return {
         ...state,
         error: null,
         isFetching: true,
       };
-    case LOGIN_RECEIVE:
+    case EXHIBITION_ADD_RECEIVE:
       return {
         ...state,
         isFetching: false,
         response: action.response,
       };
-    case LOGIN_FAILURE:
+    case EXHIBITION_ADD_FAILURE:
       return {
         ...state,
         isFetching: false,

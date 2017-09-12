@@ -1,32 +1,32 @@
 import 'isomorphic-fetch';
 import {
-  LOGIN_REQUEST,
-  LOGIN_RECEIVE,
-  LOGIN_FAILURE,
+  ABOUT_REQUEST,
+  ABOUT_RECEIVE,
+  ABOUT_FAILURE,
 } from './constant';
 import cfg from './../../../config/domain';
 
-export const loginRequest = n => ({
-  type: LOGIN_REQUEST,
+export const addRequest = n => ({
+  type: ABOUT_REQUEST,
   amount: n,
 });
 
-export const loginReceive = (n, stories) => ({
-  type: LOGIN_RECEIVE,
+export const addReceive = (n, stories) => ({
+  type: ABOUT_RECEIVE,
   amount: n,
   response: stories,
 });
 
-export const loginFailure = (n, error) => ({
-  type: LOGIN_FAILURE,
+export const addFailure = (n, error) => ({
+  type: ABOUT_FAILURE,
   amount: n,
   error,
 });
 
-export const loginCheck = n => (dispatch) => {
-  dispatch(loginRequest(n.username));
+export const addAbout = n => (dispatch) => {
+  dispatch(addRequest(n));
   return fetch(
-    `${cfg.web}/api/login`,
+    `${cfg.web}/api/aboutAdd`,
     {
       method: 'POST',
       mode: 'cors',
@@ -41,9 +41,10 @@ export const loginCheck = n => (dispatch) => {
   )
     .then((response) => {
       if (response.status > 200) {
-        dispatch(loginFailure(n.username, response.status));
+        dispatch(addFailure(n, response.status));
       }
       return response.json();
     })
-    .then(stories => dispatch(loginReceive(n.username, stories)));
+    .then(stories => dispatch(addReceive(n, stories)));
 };
+

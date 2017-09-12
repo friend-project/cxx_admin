@@ -13,6 +13,7 @@ import Exhibition from '../exhibition';
 import ExhibitionAdd from '../exhibitionAdd';
 import About from '../about';
 import Copy from '../copy';
+import ImgAdd from '../imgAdd';
 
 import s from './main';
 
@@ -40,6 +41,7 @@ class Main extends Component {
             <Route exact path={`${match.url}/exhibition/add`} component={ExhibitionAdd} />
             <Route exact path={`${match.url}/about`} component={About} />
             <Route exact path={`${match.url}/copy`} component={Copy} />
+            <Route exact path={`${match.url}/imgAdd`} component={ImgAdd} />
           </Content>
         </Layout>
       </Layout>

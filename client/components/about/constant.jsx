@@ -1,5 +1,5 @@
 // async
-export const LOGIN_REQUEST = 'LOGIN_REQUEST';
-export const LOGIN_RECEIVE = 'LOGIN_RECEIVE';
-export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+export const ABOUT_REQUEST = 'ABOUT_REQUEST';
+export const ABOUT_RECEIVE = 'ABOUT_RECEIVE';
+export const ABOUT_FAILURE = 'ABOUT_FAILURE';
 

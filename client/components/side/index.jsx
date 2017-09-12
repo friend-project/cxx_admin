@@ -53,6 +53,10 @@ class Side extends Component {
           <Icon type="copyright" />
           <span>版权</span>
         </Menu.Item>
+        <Menu.Item key="/main/imgAdd">
+          <Icon type="upload" />
+          <span>上传图片</span>
+        </Menu.Item>
       </Menu>
     );
   }

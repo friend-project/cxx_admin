@@ -15,7 +15,7 @@ ExhibitionModel.list = async (ctx, next, opt) => {
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          'SELECT * FROM exhibition',
+          'SELECT id, title, subhead, thumb_img FROM exhibition',
           function (e, results, fields) {
             connection.release()
             if (e) {
@@ -47,7 +47,7 @@ ExhibitionModel.add = async (ctx, next, opt) => {
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          `insert into exhibition (title, content) values ('${opt.title}', '${opt.content}')`,
+          `insert into exhibition (title, subhead, thumb_img, content) values ('${opt.title}', '${opt.subhead}', '${opt.thumb_img}', '${opt.content}')`,
           function (e, results, fields) {
             connection.release()
             if (e) {
@@ -105,5 +105,37 @@ ExhibitionModel.dlt = async (ctx, next, opt) => {
 
   await next();
 };
+
+ExhibitionModel.detail = async (ctx, next, opt) => {
+  try {
+    const data = await new Promise(resolve =>
+      pool.getConnection(function(err, connection) {
+        connection.query(
+          `select * from  exhibition where id=${opt.id}`,
+          function (e, results, fields) {
+            if (e) {
+              ctx.logger.error(e);
+              resolve({
+                code: 1,
+                error: e
+              });
+            } else {
+              resolve({
+                code: 0,
+                response: results,
+              });
+            }
+          }
+        );
+      })
+    )
+    return data;
+  } catch (e) {
+    ctx.logger.error(e);
+  }
+
+  await next();
+};
+
 export default ExhibitionModel;
 

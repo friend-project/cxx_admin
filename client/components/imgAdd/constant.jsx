@@ -1,0 +1,5 @@
+// async
+export const MURAL_ADD_REQUEST = 'MURAL_ADD_REQUEST';
+export const MURAL_ADD_RECEIVE = 'MURAL_ADD_RECEIVE';
+export const MURAL_ADD_FAILURE = 'MURAL_ADD_FAILURE';
+
