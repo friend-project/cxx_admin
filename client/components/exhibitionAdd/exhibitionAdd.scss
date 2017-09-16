@@ -37,9 +37,12 @@
 }
 
 .row {
+  position: relative;
+  z-index: 2;
   float: left;
   width: 100%;
   margin: 0 0 20px;
+  clear: both;
 
   input {
     width: 100%;

@@ -10491,9 +10491,12 @@ textarea.ant-pagination-options-quick-jumper input {
   text-indent: 10px; }
 
 .exhibitionAdd_row_1DmSE {
+  position: relative;
+  z-index: 2;
   float: left;
   width: 100%;
-  margin: 0 0 20px; }
+  margin: 0 0 20px;
+  clear: both; }
   .exhibitionAdd_row_1DmSE input {
     width: 100%;
     height: 40px;
