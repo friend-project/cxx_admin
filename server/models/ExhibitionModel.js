@@ -4,7 +4,7 @@ import md5 from 'md5';
 const pool = mysql.createPool({
   host     : 'localhost',
   user     : 'root',
-  password : 'm',
+  password : '',
   database : 'cxx'
 });
 
@@ -15,7 +15,7 @@ ExhibitionModel.list = async (ctx, next, opt) => {
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          'SELECT id, title, subhead, thumb_img FROM exhibition',
+          'SELECT id, title, subhead, thumb_img, update_time FROM exhibition',
           function (e, results, fields) {
             connection.release()
             if (e) {
@@ -44,10 +44,16 @@ ExhibitionModel.list = async (ctx, next, opt) => {
 
 ExhibitionModel.add = async (ctx, next, opt) => {
   try {
+    let query = '';
+    if (opt.id) {
+      query = `update exhibition set title='${opt.title}', subhead='${opt.subhead}', thumb_img='${opt.thumb_img}', content='${opt.content}' where id=${opt.id}`;
+    } else {
+      query = `insert into exhibition (title, subhead, thumb_img, content) values ('${opt.title}', '${opt.subhead}', '${opt.thumb_img}', '${opt.content}')`;
+    }
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          `insert into exhibition (title, subhead, thumb_img, content) values ('${opt.title}', '${opt.subhead}', '${opt.thumb_img}', '${opt.content}')`,
+          query,
           function (e, results, fields) {
             connection.release()
             if (e) {

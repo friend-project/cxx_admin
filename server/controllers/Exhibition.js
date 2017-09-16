@@ -19,8 +19,9 @@ Exhibition.add = async (ctx, next) => {
     const opt = {
       title: ctx.request.body.title,
       content: ctx.request.body.content,
-      subhead: ctx.request.body.title,
+      subhead: ctx.request.body.subhead,
       thumb_img: ctx.request.body.thumb_img,
+      id: ctx.request.body.id,
     }
     const data = await ExhibitionModel.add(ctx, next, opt);
 

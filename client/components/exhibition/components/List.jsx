@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'antd';
 import cfg from './../../../../config/domain';
+import s from './../exhibition';
 
 export default (data) => {
   const sourceData = data.data;
@@ -11,12 +12,15 @@ export default (data) => {
     },
     {
       title: '创建时间',
-      dataIndex: 'create_time',
+      dataIndex: 'update_time',
     },
     {
       title: '操作',
       dataIndex: 'id',
-      render: id => <Button onClick={() => data.delete(id)}>删除</Button>,
+      render: id => <div>
+        <Button type="primary" className={s.edit} onClick={() => data.detail(id)}>编辑</Button>
+        <Button type="danger" onClick={() => data.delete(id)}>删除</Button>
+      </div>,
     }
   ];
   return (

@@ -48,3 +48,6 @@ export const addExhibition = n => (dispatch) => {
     .then(stories => dispatch(addReceive(n, stories)));
 };
 
+export const getExhibition = n => {
+  return fetch(`${cfg.web}/api/exhibitionDetail/${n}`);
+};

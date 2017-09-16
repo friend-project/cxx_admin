@@ -10457,8 +10457,19 @@ textarea.ant-pagination-options-quick-jumper input {
   height: 100px; }
 .exhibition_box_1Dxc_ img {
   height: 100px; }
-.exhibitionAdd_box_uaxrT {
-  background: rgba(0, 0, 0, 0.1); }
+
+.exhibition_edit_wxhhF {
+  margin: 0 20px 0 0; }
+.exhibitionAdd_editor_3Sgdl {
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.exhibitionAdd_preview_1XhWW {
+  margin: 20px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 20px; }
+  .exhibitionAdd_preview_1XhWW img {
+    max-width: 100%; }
 
 .exhibitionAdd_btn_2eWId {
   width: 100px;

@@ -39,6 +39,7 @@ class Main extends Component {
             <Route exact path={`${match.url}/mural/add`} component={MuralAdd} />
             <Route exact path={`${match.url}/exhibition`} component={Exhibition} />
             <Route exact path={`${match.url}/exhibition/add`} component={ExhibitionAdd} />
+            <Route exact path={`${match.url}/exhibition/edit/:id`} component={ExhibitionAdd} />
             <Route exact path={`${match.url}/about`} component={About} />
             <Route exact path={`${match.url}/copy`} component={Copy} />
             <Route exact path={`${match.url}/imgAdd`} component={ImgAdd} />

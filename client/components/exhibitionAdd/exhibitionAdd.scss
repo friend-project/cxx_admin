@@ -1,5 +1,16 @@
-.box {
-  background: rgba(0, 0, 0, .1);
+.editor {
+  // background: rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+.preview {
+  margin: 20px 0 0;
+  border: 1px solid rgba(0, 0, 0, .1);
+  margin: 0;
+  padding: 20px;
+
+  img {
+    max-width: 100%;
+  }
 }
 .btn {
   width: 100px;

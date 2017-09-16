@@ -15,6 +15,10 @@ class ExhibitionList extends Component {
     const { dispatch } = this.props;
     dispatch(exhibitionDelete({id: id}));
   }
+  _detail(id) {
+    const { history } = this.props;
+    history.push(`/main/exhibition/edit/${id}`);
+  }
   render() {
     const { error, isFetching, response, dlt } = this.props;
     if (error)  {
@@ -26,7 +30,7 @@ class ExhibitionList extends Component {
     return (
       <div className={s.box}>
         {
-          response.length ? <List data={response} delete={(e) => this._delete(e)} /> : <p>无筛选结果</p>
+          response.length ? <List data={response} delete={(e) => this._delete(e)} detail={(e) => this._detail(e)}/> : <p>无筛选结果</p>
         }
       </div>
     );
