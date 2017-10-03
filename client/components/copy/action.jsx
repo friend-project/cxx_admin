@@ -1,32 +1,32 @@
 import 'isomorphic-fetch';
 import {
-  EXHIBITION_ADD_REQUEST,
-  EXHIBITION_ADD_RECEIVE,
-  EXHIBITION_ADD_FAILURE,
+  COPY_REQUEST,
+  COPY_RECEIVE,
+  COPY_FAILURE,
 } from './constant';
 import cfg from './../../../config/domain';
 
 export const addRequest = n => ({
-  type: EXHIBITION_ADD_REQUEST,
+  type: COPY_REQUEST,
   amount: n,
 });
 
 export const addReceive = (n, stories) => ({
-  type: EXHIBITION_ADD_RECEIVE,
+  type: COPY_RECEIVE,
   amount: n,
   response: stories,
 });
 
 export const addFailure = (n, error) => ({
-  type: EXHIBITION_ADD_FAILURE,
+  type: COPY_FAILURE,
   amount: n,
   error,
 });
 
-export const addExhibition = n => (dispatch) => {
+export const addGeneral = n => (dispatch) => {
   dispatch(addRequest(n));
   return fetch(
-    `${cfg.web}/api/exhibitionAdd`,
+    `${cfg.web}/api/generalAdd`,
     {
       method: 'POST',
       mode: 'cors',
@@ -48,3 +48,6 @@ export const addExhibition = n => (dispatch) => {
     .then(stories => dispatch(addReceive(n, stories)));
 };
 
+export const getAbout = n => {
+  return fetch(`${cfg.web}/api/generalDetail/${n}`);
+};

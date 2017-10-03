@@ -15,7 +15,7 @@ ExhibitionModel.list = async (ctx, next, opt) => {
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          'SELECT id, title, subhead, thumb_img, update_time FROM exhibition',
+          'SELECT id, title, subhead, thumb_img, update_time FROM exhibition order by id desc',
           function (e, results, fields) {
             connection.release()
             if (e) {

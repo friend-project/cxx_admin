@@ -3,8 +3,7 @@ import User from './../controllers/User';
 import File from './../controllers/File';
 import Mural from './../controllers/Mural';
 import Exhibition from './../controllers/Exhibition';
-// import About from './../controllers/About';
-// import Copy from './../controllers/Copy';
+import General from './../controllers/General';
 
 const router = new Router({
     prefix: '/api'
@@ -66,16 +65,16 @@ router.post('/exhibitionAdd', Exhibition.add);
 router.post('/exhibitionDelete', Exhibition.dlt);
 
 /*
- * @brief 关于我们
+ * @brief 杂货铺详情
  * @return result
  */
-// router.post('/aboutAdd', About.add);
+router.get('/generalDetail/:id', General.detail);
 
 /*
- * @brief 版权声明
+ * @brief 杂货铺添加
  * @return result
  */
-// router.post('/copyAdd', Copy.add);
+router.post('/generalAdd', General.add);
 
 export default router;
 

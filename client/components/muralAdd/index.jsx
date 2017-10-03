@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, Upload, message } from 'antd';
 import cfg from './../../../config/domain';
-import { addMural } from './action';
+import { addMural, muralAddReceive } from './action';
 
 import s from './muralAdd';
 
@@ -14,6 +14,10 @@ class Mural extends Component {
       sImg: '',
       bImg: '',
     }
+  }
+  componentWillMount() {
+    const { dispatch } = this.props;
+    dispatch(muralAddReceive(null, {}));
   }
   _add() {
     const { dispatch } = this.props;

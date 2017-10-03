@@ -11530,8 +11530,16 @@ pre {
   counter-reset: ol4;
 }
 
-.about_box_3eaAF {
-  background: rgba(0, 0, 0, 0.1); }
+.about_editor_1bygD {
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.about_preview_1YXgW {
+  margin: 20px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 20px; }
+  .about_preview_1YXgW img {
+    max-width: 100%; }
 
 .about_btn_5jKzk {
   width: 100px;
@@ -11553,9 +11561,12 @@ pre {
   text-indent: 10px; }
 
 .about_row_4oNLH {
+  position: relative;
+  z-index: 2;
   float: left;
   width: 100%;
-  margin: 0 0 20px; }
+  margin: 0 0 20px;
+  clear: both; }
   .about_row_4oNLH input {
     width: 100%;
     height: 40px;
@@ -11568,10 +11579,18 @@ pre {
 .about_img_32LHF {
   float: left;
   height: 100px; }
-.exhibitionAdd_box_2baAc {
-  background: rgba(0, 0, 0, 0.1); }
+.copy_editor_-Mmye {
+  border: 1px solid rgba(0, 0, 0, 0.1); }
 
-.exhibitionAdd_btn_1wht6 {
+.copy_preview_155UY {
+  margin: 20px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 20px; }
+  .copy_preview_155UY img {
+    max-width: 100%; }
+
+.copy_btn_2dhgx {
   width: 100px;
   height: 40px;
   margin: 10px 0 0;
@@ -11583,27 +11602,30 @@ pre {
   line-height: 40px;
   cursor: pointer; }
 
-.exhibitionAdd_title_5FilD {
+.copy_title_14ick {
   width: 100%;
   height: 40px;
   margin: 0 0 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-indent: 10px; }
 
-.exhibitionAdd_row_2kY0g {
+.copy_row_rTYo9 {
+  position: relative;
+  z-index: 2;
   float: left;
   width: 100%;
-  margin: 0 0 20px; }
-  .exhibitionAdd_row_2kY0g input {
+  margin: 0 0 20px;
+  clear: both; }
+  .copy_row_rTYo9 input {
     width: 100%;
     height: 40px;
     text-indent: 20px; }
 
-.exhibitionAdd_upload_Rq41J {
+.copy_upload_73spa {
   float: left;
   margin: 0 20px 0 0; }
 
-.exhibitionAdd_img_z9p7d {
+.copy_img_1LLWZ {
   float: left;
   height: 100px; }
 .muralAdd_row_3YrO6 {

@@ -13,7 +13,7 @@ MuralModel.list = async (ctx, next) => {
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          'SELECT * FROM mural',
+          'SELECT * FROM mural order by id desc',
           function (e, results, fields) {
             connection.release()
             if (e) {

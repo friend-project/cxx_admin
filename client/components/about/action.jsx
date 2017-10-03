@@ -23,10 +23,10 @@ export const addFailure = (n, error) => ({
   error,
 });
 
-export const addAbout = n => (dispatch) => {
+export const addGeneral = n => (dispatch) => {
   dispatch(addRequest(n));
   return fetch(
-    `${cfg.web}/api/aboutAdd`,
+    `${cfg.web}/api/generalAdd`,
     {
       method: 'POST',
       mode: 'cors',
@@ -48,3 +48,6 @@ export const addAbout = n => (dispatch) => {
     .then(stories => dispatch(addReceive(n, stories)));
 };
 
+export const getAbout = n => {
+  return fetch(`${cfg.web}/api/generalDetail/${n}`);
+};

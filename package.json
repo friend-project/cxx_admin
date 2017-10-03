@@ -39,6 +39,7 @@
     "eslint": "^4.2.0",
     "fs": "^0.0.1-security",
     "html-to-draftjs": "^0.1.0-beta15",
+    "immutable": "^3.8.1",
     "kcors": "^2.2.1",
     "koa": "next",
     "koa-bodyparser": "^4.2.0",

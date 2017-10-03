@@ -1,7 +1,7 @@
 import {
-  EXHIBITION_ADD_REQUEST,
-  EXHIBITION_ADD_RECEIVE,
-  EXHIBITION_ADD_FAILURE,
+  COPY_REQUEST,
+  COPY_RECEIVE,
+  COPY_FAILURE,
 } from './constant';
 
 export default (state = {
@@ -10,19 +10,19 @@ export default (state = {
   error: null,
 }, action) => {
   switch (action.type) {
-    case EXHIBITION_ADD_REQUEST:
+    case COPY_REQUEST:
       return {
         ...state,
         error: null,
         isFetching: true,
       };
-    case EXHIBITION_ADD_RECEIVE:
+    case COPY_RECEIVE:
       return {
         ...state,
         isFetching: false,
         response: action.response,
       };
-    case EXHIBITION_ADD_FAILURE:
+    case COPY_FAILURE:
       return {
         ...state,
         isFetching: false,
