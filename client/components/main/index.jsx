@@ -9,6 +9,8 @@ import Head from '../head';
 import Side from '../side';
 import Mural from '../mural';
 import MuralAdd from '../muralAdd';
+import Banner from '../banner';
+import BannerAdd from '../bannerAdd';
 import Exhibition from '../exhibition';
 import ExhibitionAdd from '../exhibitionAdd';
 import About from '../about';
@@ -37,6 +39,8 @@ class Main extends Component {
             <Route exact path={`${match.url}`} component={Mural} />
             <Route exact path={`${match.url}/mural`} component={Mural} />
             <Route exact path={`${match.url}/mural/add`} component={MuralAdd} />
+            <Route exact path={`${match.url}/banner`} component={Banner} />
+            <Route exact path={`${match.url}/banner/add`} component={BannerAdd} />
             <Route exact path={`${match.url}/exhibition`} component={Exhibition} />
             <Route exact path={`${match.url}/exhibition/add`} component={ExhibitionAdd} />
             <Route exact path={`${match.url}/exhibition/edit/:id`} component={ExhibitionAdd} />
@@ -58,4 +62,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(Main);
-

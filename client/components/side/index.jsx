@@ -21,8 +21,8 @@ class Side extends Component {
   render() {
     return (
       <Menu
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
+        // defaultSelectedKeys={['1']}
+        // defaultOpenKeys={['sub1']}
         mode="inline"
         theme="dark"
         onClick={(key) => this._linkTo(key)}
@@ -31,6 +31,13 @@ class Side extends Component {
           <Icon type="pie-chart" />
           <span>首页</span>
         </Menu.Item>
+        <SubMenu
+          key="sub0"
+          title={<span><Icon type="picture" /><span>Banner</span></span>}
+        >
+          <Menu.Item key="/main/banner">Banner 列表</Menu.Item>
+          <Menu.Item key="/main/banner/add">添加 Banner</Menu.Item>
+        </SubMenu>
         <SubMenu
           key="sub1"
           title={<span><Icon type="book" /><span>壁画</span></span>}

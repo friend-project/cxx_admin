@@ -76,7 +76,6 @@ class ExhibitionAdd extends Component {
       'thumb_img': thumb_img,
       id: id,
     }
-    console.log(opt);
     dispatch(addExhibition(opt));
   }
   _title(e) {
@@ -92,7 +91,6 @@ class ExhibitionAdd extends Component {
   render() {
     const that = this;
     const { response, history } = this.props;
-    console.log(response);
     if (response && response.insertId) {
       history.push('/main/exhibition');
     }
@@ -155,4 +153,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(ExhibitionAdd);
-

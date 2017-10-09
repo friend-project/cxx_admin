@@ -24,7 +24,6 @@ class Mural extends Component {
       },
       onChange(info) {
         if (info.file.status === 'done') {
-          console.log(info.file.response.fileName);
           that.setState({
             img: info.file.response.fileName,
           });
@@ -54,4 +53,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(Mural);
-

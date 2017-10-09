@@ -4,6 +4,7 @@ import File from './../controllers/File';
 import Mural from './../controllers/Mural';
 import Exhibition from './../controllers/Exhibition';
 import General from './../controllers/General';
+import Banner from './../controllers/Banner';
 
 const router = new Router({
     prefix: '/api'
@@ -76,5 +77,22 @@ router.get('/generalDetail/:id', General.detail);
  */
 router.post('/generalAdd', General.add);
 
-export default router;
+/*
+ * @brief 添加 Banner
+ * @return result
+ */
+router.post('/bannerAdd', Banner.add);
 
+/*
+ * @brief 删除 Banner
+ * @return result
+ */
+router.post('/bannerDelete', Banner.dlt);
+
+/*
+ * @brief 列表 Banner
+ * @return result
+ */
+router.get('/bannerList', Banner.list);
+
+export default router;
