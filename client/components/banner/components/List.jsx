@@ -15,6 +15,10 @@ export default (data) => {
       dataIndex: 'turn',
     },
     {
+      title: '链接',
+      dataIndex: 'uri',
+    },
+    {
       title: '创建时间',
       dataIndex: 'create_time',
     },

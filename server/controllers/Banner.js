@@ -7,6 +7,7 @@ Banner.add = async (ctx, next) => {
     const opt = {
       turn: ctx.request.body.turn || 0,
       img: ctx.request.body.img,
+      uri: ctx.request.body.uri || '#',
     }
     const data = await BannerModel.add(ctx, next, opt);
 

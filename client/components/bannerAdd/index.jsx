@@ -21,12 +21,13 @@ class Mural extends Component {
   _add() {
     const { dispatch } = this.props;
     const { img } = this.state;
-    const turn = this.refs.order.value;
+    const turn = this.refs.turn.value;
+    const uri = this.refs.uri.value;
     if (!img) {
       message.error('请上传 Banner 图');
     } else {
       const opt = {
-        img, turn,
+        img, turn, uri
       }
       dispatch(addBanner(opt));
     }
@@ -57,7 +58,10 @@ class Mural extends Component {
     return (
       <div className={s.box}>
         <div className={s.row}>
-          <input type="text" placeholder="Banner 排序，可不填，默认0，越大越靠前" ref="order" />
+          <input type="text" placeholder="Banner 排序，可不填，默认0，越大越靠前" ref="turn" />
+        </div>
+        <div className={s.row}>
+          <input type="text" placeholder="跳转链接，可不添加" ref="uri" />
         </div>
         <div className={s.row}>
           <Upload className={s.upload} {...props} >

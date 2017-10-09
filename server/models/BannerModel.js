@@ -45,7 +45,7 @@ BannerModel.add = async (ctx, next, opt) => {
     const data = await new Promise(resolve =>
       pool.getConnection(function(err, connection) {
         connection.query(
-          `insert into banner (turn, img) values ('${opt.turn}', '${opt.img}')`,
+          `insert into banner (turn, img, uri) values ('${opt.turn}', '${opt.img}', '${opt.uri}')`,
           function (e, results, fields) {
             if (e) {
               ctx.logger.error(e);
