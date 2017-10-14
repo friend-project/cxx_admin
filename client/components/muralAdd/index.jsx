@@ -13,6 +13,8 @@ class Mural extends Component {
     this.state = {
       sImg: '',
       bImg: '',
+      sWid: '',
+      sHei: '',
     }
   }
   componentWillMount() {
@@ -21,7 +23,7 @@ class Mural extends Component {
   }
   _add() {
     const { dispatch } = this.props;
-    const { sImg, bImg } = this.state;
+    const { sImg, bImg, sWid, sHei } = this.state;
     const name = this.refs.text.value;
     if (!name) {
       message.error('请填写标题');
@@ -31,10 +33,19 @@ class Mural extends Component {
       message.error('请上传原始图片');
     } else {
       const opt = {
-        sImg, bImg, name
+        sImg, sWid, sHei, bImg, name
       }
       dispatch(addMural(opt));
     }
+  }
+  _img() {
+    const image = new Image();
+    image.onload =function(){
+        const width = image.width;
+        const height = image.height;
+        const fileSize = image.fileSize;
+    }
+    image.src = input.value;
   }
   render() {
     const that = this;
@@ -46,9 +57,19 @@ class Mural extends Component {
       },
       onChange(info) {
         if (info.file.status === 'done') {
-          that.setState({
-            sImg: info.file.response.fileName,
-          });
+          const image = new Image();
+          image.onload =function(){
+              const width = image.width;
+              const height = image.height;
+              const fileSize = image.fileSize;
+              that.setState({
+                sImg: info.file.response.fileName,
+                sWid: width,
+                sHei: height,
+              });
+          }
+          image.src = `${cfg.static}/map/${info.file.response.fileName}`;
+
         } else if (info.file.status === 'error') {
           message.error(`${info.file.name} file upload failed.`);
         }

@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'development') {
     }
   }));
 }
-app.use(isLogIn);
+// app.use(isLogIn);
 
 app.use(async (ctx, next) => {
   if (ctx.path.match(/^\/api/)) {
