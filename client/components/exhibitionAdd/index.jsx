@@ -91,7 +91,7 @@ class ExhibitionAdd extends Component {
   render() {
     const that = this;
     const { response, history } = this.props;
-    if (response && response.insertId) {
+    if (response && (response.insertId || response.changedRows)) {
       history.push('/main/exhibition');
     }
     const props = {
