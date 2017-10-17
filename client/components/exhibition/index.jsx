@@ -14,6 +14,7 @@ class ExhibitionList extends Component {
   _delete(id) {
     const { dispatch } = this.props;
     dispatch(exhibitionDelete({id: id}));
+    dispatch(exhibitionList());
   }
   _detail(id) {
     const { history } = this.props;

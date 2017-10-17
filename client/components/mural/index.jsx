@@ -14,6 +14,7 @@ class Mural extends Component {
   _delete(id) {
     const { dispatch } = this.props;
     dispatch(muralDelete({id: id}));
+    dispatch(muralList());
   }
   render() {
     const { error, isFetching, response, dlt } = this.props;
