@@ -2,14 +2,23 @@
   // background: rgba(0, 0, 0, .1);
   border: 1px solid rgba(0, 0, 0, .1);
 }
+
 .preview {
-  margin: 20px 0 0;
+  width: uc(680);
+  margin: uc(27) auto;
   border: 1px solid rgba(0, 0, 0, .1);
-  margin: 0;
   padding: 20px;
+
+  color: #000;
+  font-size: 14px;
+  line-height: 1.79;
 
   img {
     max-width: 100%;
+    margin: 0 0 uc(20);
+  }
+  p {
+    margin: 0 0 uc(20);
   }
 }
 .btn {

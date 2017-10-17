@@ -10482,12 +10482,18 @@ textarea.ant-pagination-options-quick-jumper input {
   border: 1px solid rgba(0, 0, 0, 0.1); }
 
 .exhibitionAdd_preview_1XhWW {
-  margin: 20px 0 0;
+  width: uc(680);
+  margin: uc(27) auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0;
-  padding: 20px; }
+  padding: 20px;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.79; }
   .exhibitionAdd_preview_1XhWW img {
-    max-width: 100%; }
+    max-width: 100%;
+    margin: 0 0 uc(20); }
+  .exhibitionAdd_preview_1XhWW p {
+    margin: 0 0 uc(20); }
 
 .exhibitionAdd_btn_2eWId {
   width: 100px;
@@ -11701,14 +11707,6 @@ ul {
 ul,
 li {
   list-style: none; }
-
-h1,
-h2,
-h3,
-em,
-b,
-strong {
-  font-weight: 100; }
 
 /* *
  * _base.scss
